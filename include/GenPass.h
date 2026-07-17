@@ -11,3 +11,15 @@ GenPass.h - Заголовочный файл для генератора паролей
 #include <string.h>
 #include <time.h>
 #include <stdbool.h>
+typedef enum _alphacase {
+    LOWER = 0,
+    UPPER,
+    DIGIT,
+    SPECIAL_SIM
+} AlphaCase;
+
+bool CheckFlags_and_GeneratePasswords(int argc, char** argv);
+
+char* GeneratePassword(int minLen, int maxLen, int len, const char* alphabet);
+
+char* GetAlphabet(const char* enteredSymbols);
